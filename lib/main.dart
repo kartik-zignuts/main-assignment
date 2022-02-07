@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Assignment',
       // theme: ThemeData(primarySwatch: Colors.blueGrey),
       debugShowCheckedModeBanner: false,
-      initialRoute: 'login',
+      initialRoute: 'dashBoard',
       routes: {
         'login': (context) => const Login(),
         'register': (context) => Register(),

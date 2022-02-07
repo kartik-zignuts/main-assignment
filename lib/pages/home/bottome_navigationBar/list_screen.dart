@@ -93,11 +93,15 @@ class _ListScreenState extends State<ListScreen> {
             child: GestureDetector(
               onTap: () => _showModel(context),
               child: CircleAvatar(
-                radius: 60,
+                radius: 50,
                 child: _image != null
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Image.file(File(_image!.path)),
+                    ? ClipOval(
+                        child: Image.file(
+                          File(_image!.path),
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
                       )
                     : Container(
                         width: 100,
@@ -107,7 +111,7 @@ class _ListScreenState extends State<ListScreen> {
                           size: 50,
                         ),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(60)),
+                            borderRadius: BorderRadius.circular(50)),
                       ),
               ),
             ),

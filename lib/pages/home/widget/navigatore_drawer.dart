@@ -170,7 +170,7 @@ void selectitemnextpage(BuildContext context, int index) {
       break;
     case 1:
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const AddressesPage(),
+        builder: (context) => AddressesPage(),
       ));
 
       break;
