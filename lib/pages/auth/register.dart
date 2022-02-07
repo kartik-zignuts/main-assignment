@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:http/http.dart' as http;
 
 class Register extends StatefulWidget {
@@ -93,6 +91,11 @@ class _RegisterState extends State<Register> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const Hero(
+                    tag: '10D',
+                    child: Image(
+                        image: NetworkImage(
+                            "https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png"))),
                 TextField(
                   controller: widget.textcontroller,
                   // onChanged: (value) => savetext(value),

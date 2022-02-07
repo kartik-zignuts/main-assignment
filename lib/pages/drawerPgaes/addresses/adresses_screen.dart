@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class AddressesPage extends StatefulWidget {
   AddressesPage({Key? key}) : super(key: key);
@@ -32,6 +32,9 @@ class _AddressesPageState extends State<AddressesPage> {
               scale: sliderval,
               child: Container(
                 decoration: BoxDecoration(
+                    // image: const DecorationImage(
+                    //     image: NetworkImage(
+                    //         'https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png')),
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.green.shade900),
                 width: 40,
@@ -41,20 +44,28 @@ class _AddressesPageState extends State<AddressesPage> {
           ),
           TweenAnimationBuilder(
             tween: Tween<double>(begin: 0, end: 1),
-            child: Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.green.shade900,
-                      offset: const Offset(0, 0),
-                      blurRadius: 6,
-                      spreadRadius: 4,
-                    )
-                  ]),
+            child: GestureDetector(
+              onDoubleTap: () => Navigator.pushNamed(context, 'register'),
+              child: Container(
+                height: 200,
+                width: 200,
+                child: const Hero(
+                    tag: '10D',
+                    child: Image(
+                        image: NetworkImage(
+                            "https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png"))),
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.green.shade900,
+                        offset: const Offset(0, 0),
+                        blurRadius: 6,
+                        spreadRadius: 4,
+                      )
+                    ]),
+              ),
             ),
             duration: const Duration(seconds: 3),
             builder: (context, double value, child) {

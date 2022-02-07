@@ -36,7 +36,8 @@ class _HomeScreenOfHomeState extends State<HomeScreenOfHome> {
         child: load
             ? SkeletonAnimation(child: Container())
             : CachedNetworkImage(
-                imageUrl: "http://via.placeholder.com/350x150",
+                imageUrl:
+                    "https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo.png",
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     CircularProgressIndicator(value: downloadProgress.progress),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
